@@ -8,7 +8,7 @@ function NavBar() {
                 <img src="MiniLogo.svg" alt="" />
             </div>
             <div>
-                <Link className='button bg-primary text-white'>
+                <Link className='button'>
                     Soy profesor
                 </Link>
             </div>

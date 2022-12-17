@@ -81,12 +81,16 @@ h2 {
 /* Navbar */
 
 .navbar {
-  @apply flex items-center justify-between px-5 py-3;
+  @apply flex items-center justify-between px-8 py-3;
+}
+
+.navbar .button {
+  @apply bg-primary text-white text-base;
 }
 
 /* --Hero-- */
 .hero {
-  @apply flex items-center justify-center w-screen h-auto gap-20;
+  @apply flex items-center justify-center w-screen h-auto gap-20 px-20;
 }
 
 .hero > div:nth-child(1) {
@@ -117,10 +121,61 @@ h2 {
 }
 
 .methodology > p {
-  @apply text-3xl text-center font-light w-[1000px] leading-relaxed;
+  @apply text-2xl text-center font-light w-[1000px] leading-relaxed;
 }
 
-.pretaskIMG:hover {
-  @apply transition-all;
-  transform: translateX(50vw);
+/* TeamWork */
+
+.teamwork {
+  @apply flex flex-col items-center justify-center w-screen h-auto mt-52 bg-secondary;
+}
+
+.teamwork > p {
+  @apply text-2xl text-center font-light w-[1000px] leading-relaxed;
+}
+
+.powers {
+  @apply flex justify-center gap-40 mt-16 pb-60;
+}
+
+.power {
+  @apply bg-cuaternary p-5 shadow-lg rounded-lg hover:cursor-pointer relative;
+}
+
+.power > img {
+  @apply w-16 h-16;
+}
+
+.power h3 {
+  @apply text-2xl font-bold mb-2;
+}
+
+.power p {
+  @apply text-base font-light;
+}
+
+/* Ourteam */
+
+.sectionOurTeam {
+  @apply flex flex-col items-center justify-center px-44 mt-10;
+}
+
+.sectionOurTeam > div {
+  @apply flex items-center justify-center gap-7;
+}
+
+.sectionOurTeam > div > h2 {
+  @apply text-black text-2xl;
+}
+
+.sectionOurTeam .card {
+  @apply flex items-center justify-between flex-wrap w-80 h-40 text-2xl font-bold;
+}
+
+.sectionOurTeam .card > div {
+  @apply w-20 h-20 rounded-full overflow-hidden;
+}
+
+.sectionOurTeam .card > p {
+  @apply text-center w-48;
 }
