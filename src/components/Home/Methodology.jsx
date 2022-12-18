@@ -5,44 +5,44 @@ function Methodology() {
 
     const [count, setCount] = useState(0)
 
-    const [classPretask, setClassPretask] = useState('absolute -top-32 flex transition-all duration-500 ease-in-out')
-    const [classPretaskP, setClassPretaskP] = useState('absolute font-bold text-xl top-10 -right-24')
-    const [classPretaskD, setClassPretaskD] = useState('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+    const [classPretask, setClassPretask] = useState('-top-32')
+    const [classPretaskP, setClassPretaskP] = useState('top-10 -right-24')
+    const [classPretaskD, setClassPretaskD] = useState('top-20 -translate-x-44 opacity-0')
 
-    const [classActivity, setClassActivity] = useState('absolute -right-24 flex transition-all duration-500 ease-in-out')
-    const [classActivityP, setClassActivityP] = useState('absolute font-bold text-xl top-24 -right-24')
-    const [classActivityD, setClassActivityD] = useState('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+    const [classActivity, setClassActivity] = useState('-right-24')
+    const [classActivityP, setClassActivityP] = useState('top-24 -right-24')
+    const [classActivityD, setClassActivityD] = useState('top-20 -translate-x-44 opacity-0')
 
-    const [classPosTask, setClassPosTask] = useState('absolute -bottom-32 flex transition-all duration-500 ease-in-out')
-    const [classPosTaskP, setClassPosTaskP] = useState('absolute font-bold text-xl top-10 -right-24')
-    const [classPosTaskD, setClassPosTaskD] = useState('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+    const [classPosTask, setClassPosTask] = useState('-bottom-32')
+    const [classPosTaskP, setClassPosTaskP] = useState('top-44 -right-24')
+    const [classPosTaskD, setClassPosTaskD] = useState('top-20 -translate-x-44 opacity-0')
 
     useEffect(() => {
         switch (count) {
             case 0:
-                setClassActivity('absolute -right-24 flex transition-all duration-500 ease-in-out')
-                setClassActivityP('absolute font-bold text-xl top-24 -right-24')
-                setClassActivityD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
-                setClassPosTask('absolute -bottom-32 flex transition-all duration-500 ease-in-out')
-                setClassPosTaskP('absolute font-bold text-xl top-10 -right-24')
-                setClassPosTaskD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+                setClassActivity('-right-24')
+                setClassActivityP('top-24 -right-24')
+                setClassActivityD('top-20 -translate-x-44 opacity-0')
+                setClassPosTask('-bottom-32')
+                setClassPosTaskP('top-44 -right-24')
+                setClassPosTaskD('top-20 -translate-x-44 opacity-0')
 
                 break
             case 1:
-                setClassPretask('absolute -top-32 flex transition-all duration-500 ease-in-out')
-                setClassPretaskP('absolute font-bold text-xl top-10 -right-24')
-                setClassPretaskD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
-                setClassPosTask('absolute -bottom-32 flex transition-all duration-500 ease-in-out')
-                setClassPosTaskP('absolute font-bold text-xl top-10 -right-24')
-                setClassPosTaskD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+                setClassPretask('-top-32')
+                setClassPretaskP('top-10 -right-24')
+                setClassPretaskD('top-20 -translate-x-44 opacity-0')
+                setClassPosTask('-bottom-32')
+                setClassPosTaskP('top-44 -right-24')
+                setClassPosTaskD('top-20 -translate-x-44 opacity-0')
                 break
             case 2:
-                setClassPretask('absolute -top-32 flex transition-all duration-500 ease-in-out')
-                setClassPretaskP('absolute font-bold text-xl top-24 -right-24')
-                setClassPretaskD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
-                setClassActivity('absolute -right-24 flex transition-all duration-500 ease-in-out')
-                setClassActivityP('absolute font-bold text-xl top-40 -right-24')
-                setClassActivityD('absolute flex transition-all duration-500 ease-in-out top-20 trasform -translate-x-44 text-end opacity-0')
+                setClassPretask('-top-32')
+                setClassPretaskP('top-10 -right-24')
+                setClassPretaskD('top-20 -translate-x-44 opacity-0')
+                setClassActivity('-right-24')
+                setClassActivityP('top-24 -right-24')
+                setClassActivityD('top-20 -translate-x-44 opacity-0')
                 break
             default:
                 break
@@ -56,23 +56,22 @@ function Methodology() {
             <p>
                 Dividimos nuestra aplicación en lo que llamamos  TASK. Cada una de estas a su vez poseé tres partes que corresponden a PresTask, Activity y PosTask
             </p>
-            <div className='flex w-screen justify-start max-w-[1366px]'>
-                <div className='relative w-[600px] h-[600px] bg-primary rounded-full mt-52 flex items-center justify-center -left-28'>
-                    <h1 className='text-8xl font-bold text-white'>TASK</h1>
+            <div className='banner'>
+                <div className='tasks'>
+                    <h1>TASK</h1>
                     <div
                         className={classPretask}
                     >
-                        <img src="PreTaskPhone.svg" alt="" className='w-32' />
-                        <p className={classPretaskP}>Pretask</p>
+                        <img src="PreTaskPhone.svg" />
+                        <h5 className={classPretaskP}>Pretask</h5>
                         <p className={classPretaskD}>
                             Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK.
                         </p>
                         <div
-                            className='h-56 absolute top-5 w-screen opacity-0'
                             onMouseEnter={() => {
-                                setClassPretask('absolute -top-32 flex transition-all duration-500 ease-in-out transform translate-x-[1000px]')
-                                setClassPretaskP('absolute font-bold text-xl top-8 transform -translate-x-24')
-                                setClassPretaskD('absolute flex transition-all duration-500 ease-in-out top-16 trasform -translate-x-36 text-end opcity-100')
+                                setClassPretask(classPretask + ' translate-x-[1000px]')
+                                setClassPretaskP('top-8 -translate-x-24')
+                                setClassPretaskD('top-16 -translate-x-36 opcity-100')
                                 setCount(0)
                             }}>
                         </div>
@@ -80,17 +79,16 @@ function Methodology() {
                     <div
                         className={classActivity}
                     >
-                        <img src="ActivityPhone.svg" alt="" className='w-32' />
-                        <p className={classActivityP}>Activity</p>
+                        <img src="ActivityPhone.svg" />
+                        <h5 className={classActivityP}>Activity</h5>
                         <p className={classActivityD}>
                             Un conjunto de preguntas con feedback que te ayudaran a entender los conceptos aprendidos en la Pretask.
                         </p>
                         <div
-                            className='h-56 absolute top-5 w-screen opacity-0'
                             onMouseEnter={() => {
-                                setClassActivity('absolute -right-32 flex transition-all duration-500 ease-in-out transform translate-x-[650px]')
-                                setClassActivityP('absolute font-bold text-xl top-4 transform -translate-x-24')
-                                setClassActivityD('absolute flex transition-all duration-500 ease-in-out top-12 trasform -translate-x-36 text-end opcity-100')
+                                setClassActivity(classActivity + ' translate-x-[650px]')
+                                setClassActivityP('top-4 -translate-x-24')
+                                setClassActivityD('top-12 -translate-x-36 opcity-100')
                                 setCount(1)
                             }}
                         >
@@ -100,17 +98,16 @@ function Methodology() {
                     <div
                         className={classPosTask}
                     >
-                        <img src="PosTaskPhone.svg" alt="" className='w-32' />
-                        <p className={classPosTaskP}>PosTask</p>
+                        <img src="PosTaskPhone.svg" />
+                        <h5 className={classPosTaskP}>PosTask</h5>
                         <p className={classPosTaskD}>
                             Un conjunto de preguntas sin feedfack que nos ayudaran a saber que tan bien aprendiste los conceptos.
                         </p>
                         <div
-                            className='h-56 absolute top-5 w-screen opacity-0'
                             onMouseEnter={() => {
-                                setClassPosTask('absolute -bottom-32 flex transition-all duration-500 ease-in-out transform translate-x-[1000px]')
-                                setClassPosTaskP('absolute font-bold text-xl top-8 transform -translate-x-24')
-                                setClassPosTaskD('absolute flex transition-all duration-500 ease-in-out top-16 trasform -translate-x-36 text-end opcity-100')
+                                setClassPosTask(classPosTask + ' translate-x-[1000px]')
+                                setClassPosTaskP('top-8 -translate-x-24')
+                                setClassPosTaskD(' top-16 -translate-x-36 opcity-100')
                                 setCount(2)
                             }}
                         >

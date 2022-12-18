@@ -5,23 +5,23 @@ function TeamWork() {
 
     const [counter, setCounter] = useState(0)
 
-    const [classPower1D, setClassPower1D] = useState('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-100')
-    const [classPower2D, setClassPower2D] = useState('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
-    const [classPower3D, setClassPower3D] = useState('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
+    const [classPower1D, setClassPower1D] = useState('opacity-100')
+    const [classPower2D, setClassPower2D] = useState('opacity-0')
+    const [classPower3D, setClassPower3D] = useState('opacity-0')
 
     useEffect(() => {
         switch (counter) {
             case 0:
-                setClassPower2D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
-                setClassPower3D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
+                setClassPower2D(classPower2D.replace('opacity-100', 'opacity-0'))
+                setClassPower3D(classPower3D.replace('opacity-100', 'opacity-0'))
                 break;
             case 1:
-                setClassPower1D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
-                setClassPower3D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
+                setClassPower1D(classPower1D.replace('opacity-100', 'opacity-0'))
+                setClassPower3D(classPower3D.replace('opacity-100', 'opacity-0'))
                 break;
             case 2:
-                setClassPower1D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
-                setClassPower2D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-0')
+                setClassPower1D(classPower1D.replace('opacity-100', 'opacity-0'))
+                setClassPower2D(classPower2D.replace('opacity-100', 'opacity-0'))
                 break;
             default:
                 break;
@@ -32,13 +32,13 @@ function TeamWork() {
         <div className='teamwork'>
             <Title textColor='text-black' title='Trabajo en equipo' />
             <p>
-                Cada sesión se realiza en grupos de 1 - 3 personas en las que cada persona se le asignará un rol con una habilidad util para la realización de la TASK.
+                Cada sesión se realiza en grupos de 1 - 3 personas en las que cada persona se le asignará un rol con una habilidad útil para la realización de la TASK.
             </p>
             <div className='powers'>
                 <div
                     className="power"
                     onMouseEnter={() => {
-                        setClassPower1D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-100')
+                        setClassPower1D(classPower1D.replace('opacity-0', 'opacity-100'))
                         setCounter(0)
                     }}
                 >
@@ -53,7 +53,7 @@ function TeamWork() {
                 <div
                     className="power"
                     onMouseEnter={() => {
-                        setClassPower2D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-100')
+                        setClassPower2D(classPower2D.replace('opacity-0', 'opacity-100'))
                         setCounter(1)
                     }}
                 >
@@ -67,7 +67,7 @@ function TeamWork() {
                 <div
                     className="power"
                     onMouseEnter={() => {
-                        setClassPower3D('absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out opacity-100')
+                        setClassPower3D(classPower3D.replace('opacity-0', 'opacity-100'))
                         setCounter(2)
                     }}
                 >

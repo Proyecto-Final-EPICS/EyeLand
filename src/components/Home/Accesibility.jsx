@@ -3,96 +3,102 @@ import Title from '../common/Title'
 
 function Accesibility() {
 
-    const [classAccesibility, setClassAccesibility] = useState('bg-white text-black flex flex-col items-center justify-center pb-10')
-    const [classAccesibilityP, setClassAccesibilityP] = useState('text-2xl font-Poppins font-light w-96 leading-relaxed relative -top-10 tracking-normal')
+    const [classAccesibility, setClassAccesibility] = useState('accesibility bg-white text-black')
+    const [classAccesibilityP, setClassAccesibilityP] = useState('leading-relaxed text-2xl font-Poppins tracking-normal')
 
     return (
         <div className={classAccesibility}>
             <Title title="Para todos" textColor={
                 classAccesibility.includes('text-black') ? 'text-black' : 'text-white'
             } />
-            <div className='flex justify-center gap-20 w-[1300px] mt-10 items-center'>
+            <div>
                 <p className={classAccesibilityP} id='descripción'>
                     Es muy importante que todas las personas puedan disfrutar de nuestra aplicación, independientemente de sus habilidades o limitaciones físicas. Por eso, hemos implementado varias opciones de accesibilidad para que todos puedan usarla de manera cómoda y sin problemas.
                 </p>
-                <div className='relative flex'>
-                    <img src="AccesibilityBanner.svg" alt="" className='w-[500px]' />
-                    <div className='absolute w-28 h-28 rounded-full bg-secondary -top-16 right-36 shadow-lg flex items-center justify-center group hover:cursor-default'>
-                        <img src="Mouse.svg" alt="" className='absolute w-16 h-16 group-hover:opacity-0 transition-all' />
-                        <p className='absolute text-white text-center opacity-0 group-hover:opacity-100 transition-all font-bold px-5'>
+                <div>
+                    <img src="AccesibilityBanner.svg" alt="" />
+                    <div className='clickable group '>
+                        <img src="Mouse.svg" alt="" className='group-hover:opacity-0' />
+                        <p className='group-hover:opacity-100'>
                             Pruebalo tu mismo
                         </p>
                     </div>
-                    {/* Leer página */}
-                    <div
-                        className="absolute w-32 h-32 top-10 left-5 cursor-pointer"
-                        onClick={
-                            () => {
-                                // activate the function to read the page integrated in the browser
-                                window.speechSynthesis.speak(new SpeechSynthesisUtterance(document.getElementById('descripción').textContent))
+                    <div className='accesibilityButtons'>
 
-                            }
-                        }
-                    ></div>
-                    {/* Contraste */}
-                    <div
-                        className="absolute w-32 h-32 top-10 left-40 cursor-pointer"
-                        onClick={
-                            () => {
-                                if (classAccesibility.includes('bg-white')) {
-                                    setClassAccesibility('bg-black text-white flex flex-col items-center justify-center pb-10 tracking-normal')
-                                } else {
-                                    setClassAccesibility('bg-white text-black flex flex-col items-center justify-center pb-10 tracking-normal')
-                                }
-                            }
-                        }
-                    ></div>
-                    {/* Aumentar tamaño */}
-                    <div
-                        className="absolute w-32 h-32 top-44 left-5 cursor-pointer"
-                        onClick={
-                            () => {
-                                if (classAccesibilityP.includes('text-2xl')) {
-                                    setClassAccesibilityP('text-3xl font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                } else if (classAccesibilityP.includes('text-3xl')) {
-                                    setClassAccesibilityP('text-4xl font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                } else if (classAccesibilityP.includes('text-4xl')) {
-                                    setClassAccesibilityP('text-2xl font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                }
-                            }
-                        }
+                        {/* Leer página */}
+                        <div
+                            className="top-10 left-5"
+                            onClick={
+                                () => {
+                                    // activate the function to read the page integrated in the browser
+                                    window.speechSynthesis.speak(new SpeechSynthesisUtterance(document.getElementById('descripción').textContent))
 
-                    ></div>
-                    {/* Cambiar fuente */}
-                    <div
-                        className="absolute w-32 h-32 top-44 left-40 cursor-pointer"
-                        onClick={
-                            () => {
-                                if (classAccesibilityP.includes('font-Poppins')) {
-                                    setClassAccesibilityP('text-2xl font-sans font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                } else if (classAccesibilityP.includes('font-sans')) {
-                                    setClassAccesibilityP('text-2xl font-serif font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                } else if (classAccesibilityP.includes('font-serif')) {
-                                    setClassAccesibilityP('text-2xl font-mono font-light w-96 leading-relaxed relative -top-10 tracking-normal')
-                                } else if (classAccesibilityP.includes('font-mono')) {
-                                    setClassAccesibilityP('text-2xl font-Poppins font-light w-96 leading-relaxed relative -top-10 tracking-normal')
                                 }
                             }
-                        }
-                    ></div>
-                    {/* Cambiar espaciado */}
-                    <div
-                        className="absolute w-32 h-32 top-80 left-5 cursor-pointer"
-                        onClick={
-                            () => {
-                                if (classAccesibilityP.includes('tracking-normal')) {
-                                    setClassAccesibilityP('text-2xl font-light w-96 leading-relaxed relative -top-10 tracking-widest')
-                                } else if (classAccesibilityP.includes('tracking-widest')) {
-                                    setClassAccesibilityP('text-2xl font-light w-96 leading-relaxed relative -top-10 tracking-normal')
+                        ></div>
+
+                        {/* Contraste */}
+                        <div
+                            className="top-10 left-40"
+                            onClick={
+                                () => {
+                                    if (classAccesibility.includes('bg-white')) {
+                                        setClassAccesibility('accesibility bg-black text-white')
+                                    } else {
+                                        setClassAccesibility('accesibility bg-white text-black')
+                                    }
                                 }
                             }
-                        }
-                    ></div>
+                        ></div>
+
+                        {/* Aumentar tamaño */}
+                        <div
+                            className="top-44 left-5"
+                            onClick={
+                                () => {
+                                    if (classAccesibilityP.includes('text-2xl')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('text-2xl', 'text-3xl'))
+                                    } else if (classAccesibilityP.includes('text-3xl')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('text-3xl', 'text-4xl'))
+                                    } else if (classAccesibilityP.includes('text-4xl')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('text-4xl', 'text-2xl'))
+                                    }
+                                }
+                            }
+                        ></div>
+
+                        {/* Cambiar fuente */}
+                        <div
+                            className="top-44 left-40"
+                            onClick={
+                                () => {
+                                    if (classAccesibilityP.includes('font-Poppins')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('font-Poppins', 'font-sans'))
+                                    } else if (classAccesibilityP.includes('font-sans')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('font-sans', 'font-serif'))
+                                    } else if (classAccesibilityP.includes('font-serif')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('font-serif', 'font-mono'))
+                                    } else if (classAccesibilityP.includes('font-mono')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('font-mono', 'font-Poppins'))
+                                    }
+                                }
+                            }
+                        ></div>
+
+                        {/* Cambiar espaciado */}
+                        <div
+                            className="top-80 left-5"
+                            onClick={
+                                () => {
+                                    if (classAccesibilityP.includes('tracking-normal')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('tracking-normal', 'tracking-widest'))
+                                    } else if (classAccesibilityP.includes('tracking-widest')) {
+                                        setClassAccesibilityP(classAccesibilityP.replace('tracking-widest', 'tracking-normal'))
+                                    }
+                                }
+                            }
+                        ></div>
+                    </div>
                 </div>
             </div>
         </div >

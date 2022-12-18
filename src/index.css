@@ -1,7 +1,12 @@
+/*#region tailwind*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/*#endregion tailwind*/
+
+/*#region fonts */
 @font-face {
   font-family: "Poppins";
   src: url("/fonts/Poppins/Poppins-Regular.ttf");
@@ -55,8 +60,9 @@
   src: url("/fonts/Poppins/Poppins-Black.ttf");
   font-weight: 900;
 }
+/* #endregion fonts */
 
-/* Commom */
+/* #region Common */
 
 .App {
   @apply min-h-screen font-Poppins overflow-x-hidden flex flex-col justify-between;
@@ -70,10 +76,6 @@
   @apply font-bold rounded-lg flex items-center justify-center px-5 py-3 shadow-lg hover:opacity-80 active:opacity-70;
 }
 
-.title {
-  @apply flex items-center gap-5 justify-center py-8;
-}
-
 h2 {
   @apply text-4xl font-bold leading-relaxed;
 }
@@ -82,17 +84,41 @@ input {
   @apply h-10 border border-black rounded-lg w-full px-3;
 }
 
-/* Navbar */
+/* #endregion Common */
+
+/* #region Titulos */
+
+.title {
+  @apply flex items-center gap-5 justify-center py-8;
+}
+
+/* Lineas */
+
+.title > hr {
+  @apply w-20;
+}
+
+/* #endregion Titulos */
+
+/* #region Navbar */
 
 .navbar {
   @apply flex items-center justify-between px-8 py-3;
 }
 
+/* Soy profesor */
 .navbar .button {
   @apply bg-primary text-white text-base;
 }
 
-/* --Hero-- */
+/* Logo */
+.navbar img {
+  @apply cursor-pointer;
+}
+
+/* #endregion Navbar */
+
+/* #region Hero */
 .hero {
   @apply flex items-center justify-center w-screen h-auto gap-20 px-20;
 }
@@ -101,8 +127,9 @@ input {
   @apply flex flex-col items-start w-[550px];
 }
 
+/* Titulo */
 .hero > div > h1 {
-  @apply text-9xl font-bold;
+  @apply text-9xl font-bold animate_entrance_1;
   background: linear-gradient(90deg, #0d9748 -21%, #41fb99 116.17%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -110,15 +137,51 @@ input {
   text-fill-color: transparent;
 }
 
+.animate_entrance_1 {
+  animation-duration: 0.5s;
+  animation-name: animate_entrance;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.animate_entrance_2 {
+  animation-duration: 0.5s;
+  animation-name: animate_entrance;
+  animation-delay: 0.6s;
+  animation-fill-mode: backwards;
+}
+
+.animate_entrance_3 {
+  animation-duration: 0.5s;
+  animation-name: animate_entrance;
+  animation-delay: 0.7s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate_entrance {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+/* descripción */
 .hero > div > h2 {
-  @apply text-2xl opacity-70 font-medium;
+  @apply text-2xl opacity-70 font-medium animate_entrance_2;
 }
 
+/* muy pronto */
 .hero > div > div {
-  @apply button bg-terciary text-white text-4xl mt-10;
+  @apply button bg-terciary text-white text-4xl mt-10 animate_entrance_3;
 }
 
-/* methodology */
+/* #endregion Hero */
+
+/* #region methodology */
 
 .methodology {
   @apply flex flex-col items-center justify-center w-screen h-auto;
@@ -128,7 +191,48 @@ input {
   @apply text-2xl text-center font-light w-[1000px] leading-relaxed;
 }
 
-/* TeamWork */
+.banner {
+  @apply flex w-screen justify-start max-w-[1366px];
+}
+
+/* Bola verde */
+.tasks {
+  @apply relative w-[600px] h-[600px] bg-primary rounded-full mt-52 flex items-center justify-center -left-28;
+}
+
+/* Titulo de bola verde */
+.tasks > h1 {
+  @apply text-8xl font-bold text-white;
+}
+
+/* task */
+.tasks > div {
+  @apply absolute flex transition-all duration-500 ease-in-out;
+}
+
+/* task img */
+.tasks > div > img {
+  @apply w-32;
+}
+
+/* task title */
+.tasks > div > h5 {
+  @apply absolute font-bold text-xl;
+}
+
+/* task description */
+.tasks > div > p {
+  @apply absolute flex transition-all duration-500 ease-in-out text-end;
+}
+
+/* hover area */
+.tasks > div > div {
+  @apply h-56 absolute top-5 w-screen opacity-0;
+}
+
+/* #endregion methodology */
+
+/* #region TeamWork */
 
 .teamwork {
   @apply flex flex-col items-center justify-center w-screen h-auto mt-52 bg-secondary;
@@ -158,7 +262,57 @@ input {
   @apply text-base font-light;
 }
 
-/* Ourteam */
+/* description of the power */
+.power > div {
+  @apply absolute text-center w-96 mt-10 -translate-x-[41%] transition-all duration-500 ease-in-out;
+}
+
+/* #endregion Teamwork */
+
+/* #region accesibility */
+
+.accesibility {
+  @apply flex flex-col items-center justify-center pb-10;
+}
+
+.accesibility > div {
+  @apply flex justify-center gap-20 w-[1300px] mt-10 items-center;
+}
+
+/* description */
+.accesibility > div > p {
+  @apply font-light w-96 relative -top-10;
+}
+
+.accesibility > div > div {
+  @apply relative flex;
+}
+
+/* banner */
+.accesibility img {
+  @apply w-[500px];
+}
+
+/* mouse notification */
+.clickable {
+  @apply absolute w-28 h-28 rounded-full bg-secondary -top-16 right-36 shadow-lg flex items-center justify-center hover:cursor-default;
+}
+
+.clickable > img {
+  @apply absolute w-16 h-16 transition-all;
+}
+
+.clickable > p {
+  @apply absolute text-white text-center opacity-0  transition-all font-bold px-5;
+}
+
+/* botones */
+.accesibilityButtons > div {
+  @apply absolute w-32 h-32 cursor-pointer;
+}
+/* #endregion */
+
+/* #region Ourteam */
 
 .ourteam {
   @apply mb-40;
@@ -187,8 +341,9 @@ input {
 .sectionOurTeam .card > p {
   @apply text-center w-48;
 }
+/* #endregion Ourteam */
 
-/* footer */
+/* #region footer */
 
 .footer {
   @apply flex flex-col items-center justify-center w-screen h-auto mb-5;
@@ -197,3 +352,5 @@ input {
 .footer > hr {
   @apply w-4/5 border-black my-5;
 }
+
+/* #endregion footer */
