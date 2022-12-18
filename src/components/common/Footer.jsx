@@ -2,7 +2,10 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='mt-52'>Footer</div>
+        <div className='footer'>
+            <hr />
+            <img src="MiniLogo.svg" alt="" />
+        </div>
     )
 }
 

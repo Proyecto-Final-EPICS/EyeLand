@@ -4,6 +4,14 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'font-sans',
+    'font-serif',
+    'font-mono',
+    'border-black',
+    'tracking-normal',
+    'tracking-wide',
+  ],
   theme: {
     extend: {
       fontFamily: {

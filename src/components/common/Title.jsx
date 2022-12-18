@@ -6,11 +6,11 @@ function Title({ textColor, title }) {
 
     return (
         <div className='title'>
-            <hr className={'w-20 border-black ' + lineColor} />
+            <hr className={'w-20 ' + lineColor} />
             <h2 className={textColor}>
                 {title}
             </h2>
-            <hr className={'w-20 border-black ' + lineColor} />
+            <hr className={'w-20 ' + lineColor} />
         </div>
     )
 }
