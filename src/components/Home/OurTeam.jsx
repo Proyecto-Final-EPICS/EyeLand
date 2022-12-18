@@ -25,6 +25,16 @@ function OurTeam() {
                 ]}
             />
             <Section
+                title={'Diseñadores'}
+                people={[
+                    {
+                        name: 'Shannon A. Ebratt Ariza',
+                        img: 'https://mir-s3-cdn-cf.behance.net/user/115/f9ed0a661387125.62f534e44cf62.jpg',
+                        link: 'https://www.behance.net/shannonebratt'
+                    },
+                ]}
+            />
+            <Section
                 title={'Desarrolladores'}
                 people={[
                     {
