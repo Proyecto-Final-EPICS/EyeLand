@@ -176,7 +176,7 @@ input {
 
 /* muy pronto */
 .hero > div > div {
-  @apply button bg-terciary text-white text-4xl mt-10 animate_entrance_3;
+  @apply button bg-terciary text-white text-4xl mt-10 animate_entrance_3 cursor-default;
 }
 
 /* #endregion Hero */
