@@ -58,6 +58,8 @@ function Methodology() {
             </p>
             <div className='banner'>
                 <div className='tasks'>
+                    <div className='absolute w-[2000px] h-[2000px] bg-terciary rounded-full -z-10 -left-[1600px] -top-[700px]'></div>
+                    <div className='absolute w-[1900px] h-[1900px] bg-white rounded-full -z-10 -left-[1550px] -top-[650px]'></div>
                     <h1>TASK</h1>
                     <div
                         className={classPretask}
