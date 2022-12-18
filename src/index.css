@@ -59,7 +59,7 @@
 /* Commom */
 
 .App {
-  @apply min-h-screen font-Poppins overflow-x-hidden;
+  @apply min-h-screen font-Poppins overflow-x-hidden flex flex-col justify-between;
 }
 
 .card {
@@ -76,6 +76,10 @@
 
 h2 {
   @apply text-4xl font-bold leading-relaxed;
+}
+
+input {
+  @apply h-10 border border-black rounded-lg w-full px-3;
 }
 
 /* Navbar */
@@ -156,6 +160,10 @@ h2 {
 
 /* Ourteam */
 
+.ourteam {
+  @apply mb-40;
+}
+
 .sectionOurTeam {
   @apply flex flex-col items-center justify-center px-44 mt-10;
 }
@@ -183,7 +191,7 @@ h2 {
 /* footer */
 
 .footer {
-  @apply flex flex-col items-center justify-center w-screen h-auto mb-5 mt-40;
+  @apply flex flex-col items-center justify-center w-screen h-auto mb-5;
 }
 
 .footer > hr {
