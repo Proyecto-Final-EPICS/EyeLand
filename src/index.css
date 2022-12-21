@@ -86,6 +86,16 @@ input {
 
 /* #endregion Common */
 
+/* #region Alerts */
+
+.alert {
+  @apply fixed left-1/2 -translate-x-1/2 mt-5 shadow-lg;
+}
+
+/* #endregion Alerts */
+
+/* #region home */
+
 /* #region Titulos */
 
 .title {
@@ -107,12 +117,12 @@ input {
 }
 
 /* Soy profesor */
-.navbar .button {
+.home .navbar .button {
   @apply bg-primary text-white text-base;
 }
 
 /* Logo */
-.navbar img {
+.home .navbar img {
   @apply cursor-pointer;
 }
 
@@ -343,6 +353,8 @@ input {
 }
 /* #endregion Ourteam */
 
+/* #endregion */
+
 /* #region footer */
 
 .footer {
@@ -354,3 +366,96 @@ input {
 }
 
 /* #endregion footer */
+
+/* #region login */
+
+.login {
+  @apply h-auto flex items-center justify-center flex-col w-auto;
+}
+
+.login > div {
+  @apply relative w-fit;
+}
+
+/* logo */
+
+.login > div > img {
+  @apply absolute w-96 -top-48 -right-48;
+}
+
+.login .card {
+  @apply flex flex-col items-stretch justify-center w-96 relative;
+}
+
+/* Iniciar sesion titulo */
+.login .card > h2 {
+  @apply text-center;
+}
+
+.login .card div {
+  @apply w-full;
+}
+
+.login .card form {
+  @apply my-5 w-full;
+}
+
+/* submit button */
+.login .card form button {
+  @apply w-full mt-5;
+}
+
+/* #endregion login */
+
+/* #region Admin */
+
+.admin {
+  @apply flex;
+}
+
+/* #region navbar */
+
+.admin .navbar {
+  @apply flex flex-col bg-primary h-screen justify-between py-5 px-3 items-stretch w-64 shadow-lg;
+}
+
+.admin .navbar > div {
+  @apply flex flex-col gap-3;
+}
+
+.admin .navbar > div > div {
+  @apply flex flex-col mt-5;
+}
+
+.admin .navbar h3 {
+  @apply text-center w-full text-white font-bold;
+}
+
+.admin .navbar hr {
+  @apply px-5 border-white;
+}
+
+.admin .navbar .tables {
+  @apply flex flex-col my-5 text-center;
+}
+
+/* botones de tablas */
+.admin .navbar .tables > .table {
+  @apply hover:bg-white hover:bg-opacity-20 py-2 text-white rounded-lg;
+}
+
+/* #endregion */
+
+/* #region crud */
+
+.crud {
+  @apply flex flex-col items-center justify-center w-full;
+}
+
+.crud > div:nth-child(2) {
+  @apply w-full h-full px-10 pb-10;
+}
+
+/* #endregion */
+
+/* #endregion */

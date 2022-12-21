@@ -1,18 +1,30 @@
 import { Routes, Route } from "react-router-dom"
-import NavBar from "./components/common/NavBar"
-import Footer from "./components/common/Footer"
+import { Alert, Collapse } from "@mui/material"
+import { AlertContext } from "./contexts/AlertContext"
+import { useContext } from "react"
 import Home from "./routes/Home"
 import Login from "./routes/Login"
+import Admin from "./routes/Admin"
+import CRUD from "./routes/Admin/CRUD"
 
 function App() {
+
+  const { alertText, alertSeverity, alertOpen } = useContext(AlertContext)
+
   return (
     <div className="App">
-      <NavBar />
+      {
+        <Collapse in={alertOpen} className='alert'>
+          <Alert severity={alertSeverity}>{alertText}</Alert>
+        </Collapse>
+      }
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/admin/*" element={<Admin />}>
+          <Route path=":name" element={<CRUD />} />
+        </Route>
       </Routes>
-      <Footer />
     </div>
   )
 }
