@@ -5,7 +5,8 @@ import { useContext } from "react"
 import Home from "./routes/Home"
 import Login from "./routes/Login"
 import Admin from "./routes/Admin"
-import CRUD from "./routes/Admin/CRUD"
+import AdminHome from "./routes/Admin/AdminHome"
+import AdminCRUD from "./routes/Admin/AdminCRUD"
 
 function App() {
 
@@ -22,7 +23,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin/*" element={<Admin />}>
-          <Route path=":name" element={<CRUD />} />
+          <Route path="home" element={<AdminHome />} />
+          <Route path="crud/*" element={<AdminCRUD />} />
         </Route>
       </Routes>
     </div>

@@ -1,12 +1,10 @@
 import { useState, useContext } from 'react'
-import NavBar from '../components/Login/NavBar'
-import Footer from '../components/common/Footer'
 import { AlertContext } from '../contexts/AlertContext'
 import { useNavigate } from 'react-router-dom'
+import NavBar from '../components/Login/NavBar'
+import Footer from '../components/common/Footer'
 import axios from 'axios'
-import { UserContext } from '../contexts/UserContext'
 import ReactLoading from 'react-loading';
-import { Alert } from '@mui/material'
 
 const INITIAL_STATE = {
     username: '',
@@ -14,16 +12,8 @@ const INITIAL_STATE = {
 }
 
 const VALIDATION = {
-    username: (value) => {
-        if (!value) {
-            return 'El usuario es requerido'
-        }
-    },
-    password: (value) => {
-        if (!value) {
-            return 'La contraseña es requerida'
-        }
-    }
+    username: (value) => !value && 'El usuario es requerido',
+    password: (value) => !value && 'La contraseña es requerida'
 }
 
 function Login() {
@@ -31,7 +21,6 @@ function Login() {
     const [form, setForm] = useState(INITIAL_STATE)
     const [loading, setLoading] = useState(false)
     const { handleAlert } = useContext(AlertContext)
-    const { user, setUser, token, setToken } = useContext(UserContext)
     const navigate = useNavigate()
 
     const handleChange = (e) => {
@@ -40,6 +29,22 @@ function Login() {
             ...form,
             [e.target.name]: e.target.value
         })
+    }
+
+    const sendForm = (role) => {
+        setLoading(true)
+        const url = role === 'admin' ? '' : 'https://epics-si-api.onrender.com/api/login'
+        axios.defaults.timeout = 10000
+        axios.post(url, form)
+            .then(res => {
+                handleAlert('Bienvenido', 'success')
+                role === 'admin' ? navigate('/admin/home') : navigate('/teacher/home')
+            }).catch(err => {
+                const error = err.response ? err.response.data : 'Error de conexión, intentelo más tarde'
+                handleAlert(error, 'error')
+            }).then(() => {
+                setLoading(false)
+            })
     }
 
     const handleSubmit = (e) => {
@@ -55,22 +60,8 @@ function Login() {
             handleAlert(passwordError, 'error')
             return
         }
-
-        setLoading(true)
-        // send data to server
-        axios.post('https://epics-si-api.onrender.com/api/login', form)
-            .then(res => {
-                // save token in local storage
-                setUser(res.data.user)
-                setToken(res.data.token)
-
-                handleAlert('Bienvenido', 'success')
-                navigate('/admin/home')
-            }).catch(err => {
-                handleAlert(err.data, 'error')
-            }).then(() => {
-                setLoading(false)
-            })
+        navigate('/admin/home')
+        // sendForm(username === 'admin' ? 'admin' : 'teacher')
     }
 
     return (
