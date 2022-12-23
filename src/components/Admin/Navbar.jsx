@@ -33,7 +33,7 @@ function Navbar() {
     }, [location])
 
     return (
-        <div className='flex flex-col bg-terciary h-screen justify-between py-5 px-3 items-stretch z-10 shadow-lateralNavbar'>
+        <div className='flex flex-col bg-terciary h-screen justify-between py-5 px-3 items-stretch z-10 shadow-lateralNavbar fixed'>
             <div className='flex flex-col gap-3'>
                 <img src="Logo.svg" className='w-10 mx-auto' />
                 <div className='flex flex-row relative mt-5'>
@@ -44,12 +44,14 @@ function Navbar() {
                             <AdminNavbarButton
                                 background={'bg-primary'}
                                 img={'Home.svg'}
+                                title={'Home'}
                             />
                         </Link>
                         <Link to={'crud/instituciones'}>
                             <AdminNavbarButton
                                 background={'bg-primary'}
                                 img={'CRUD.svg'}
+                                title={'CRUD'}
                             />
                         </Link>
                     </div>
@@ -59,6 +61,7 @@ function Navbar() {
                 background={'bg-red-600'}
                 onClick={handleLogout}
                 img={'Logout.svg'}
+                title={'Cerrar sesión'}
             />
         </div>
     )

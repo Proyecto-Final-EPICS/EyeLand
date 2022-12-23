@@ -87,7 +87,7 @@ function AdminCRUD() {
     const name = location.pathname.split('/')[3]
 
     return (
-        <div className='flex w-full'>
+        <div className='flex h-full'>
             <NavBarCrud />
             <div className='w-full'>
                 <div className='bg-terciary w-full flex gap-3 px-5 py-3'>

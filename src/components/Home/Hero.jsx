@@ -10,7 +10,7 @@ function Hero() {
                 <h2 className='text-2xl opacity-70 font-medium animate-entrance-2'>
                     App para la enseñanza del inglés y el trabajo en equipo
                 </h2>
-                <div className='button bg-terciary text-white text-4xl mt-10 cursor-default animate-entrance-3'>
+                <div className='button bg-terciary text-white text-4xl mt-10 cursor-default animate-entrance'>
                     ¡Muy Pronto!
                 </div>
             </div>

@@ -4,9 +4,11 @@ import Navbar from '../../components/Admin/Navbar'
 
 function Admin() {
     return (
-        <div className='flex'>
+        <div className='flex min-h-screen h-auto items-stretch'>
             <Navbar />
-            <Outlet />
+            <div className='ml-[72px] w-full'>
+                <Outlet />
+            </div>
         </div>
     )
 }
