@@ -1,16 +1,15 @@
 import React from 'react'
-import Title from '../common/Title'
 import PersonCard from './PersonCard'
 
 function Section({ title, people }) {
     return (
-        <div className='sectionOurTeam'>
-            <div>
-                <h2>
+        <div className='flex flex-col items-center justify-center px-44 mt-10'>
+            <div className='flex items-center justify-center gap-7'>
+                <h2 className='text-black text-2xl'>
                     {title}
                 </h2>
             </div>
-            <div className='flex items-center justify-center flex-wrap'>
+            <div className='flex items-center justify-center flex-wrap gap-5'>
                 {
                     people.map((person, index) => {
                         return (

@@ -4,7 +4,7 @@ import Navbar from '../../components/Admin/Navbar'
 
 function Admin() {
     return (
-        <div className='admin'>
+        <div className='flex'>
             <Navbar />
             <Outlet />
         </div>

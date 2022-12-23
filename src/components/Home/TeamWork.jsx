@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Power from './Power'
 import Title from '../common/Title'
 
 function TeamWork() {
@@ -29,55 +30,39 @@ function TeamWork() {
     }, [counter])
 
     return (
-        <div className='teamwork'>
+        <div className='flex flex-col items-center justify-center w-screen h-auto mt-52 bg-secondary'>
             <Title textColor='text-black' title='Trabajo en equipo' />
-            <p>
+            <p className='text-2xl text-center font-light w-[1000px] leading-relaxed'>
                 Cada sesión se realiza en grupos de 1 - 3 personas en las que cada persona se le asignará un rol con una habilidad útil para la realización de la TASK.
             </p>
-            <div className='powers'>
-                <div
-                    className="power"
-                    onMouseEnter={() => {
-                        setClassPower1D(classPower1D.replace('opacity-0', 'opacity-100'))
-                        setCounter(0)
-                    }}
-                >
-                    <img src="Power1.svg" alt="" />
-
-                    <div className={classPower1D}>
-                        <h3>Super hearing</h3>
-                        <p>Tu poder es el de poder escuchar como se pronuncian las palabras que aparecen en las preguntas.</p>
-                    </div>
-
-                </div>
-                <div
-                    className="power"
-                    onMouseEnter={() => {
-                        setClassPower2D(classPower2D.replace('opacity-0', 'opacity-100'))
-                        setCounter(1)
-                    }}
-                >
-                    <img src="Power2.svg" alt="" />
-                    <div className={classPower2D}>
-                        <h3>Memory pro</h3>
-                        <p>Tu poder es el de poder ver la traducción de la palabra clave en la pregunta.</p>
-                    </div>
-
-                </div>
-                <div
-                    className="power"
-                    onMouseEnter={() => {
-                        setClassPower3D(classPower3D.replace('opacity-0', 'opacity-100'))
-                        setCounter(2)
-                    }}
-                >
-                    <img src="Power3.svg" alt="" />
-                    <div className={classPower3D}>
-                        <h3>Super radar</h3>
-                        <p>Tu poder es el de poder reconocer ubicar y volver a leer las instrucciones.</p>
-                    </div>
-
-                </div>
+            <div className='flex justify-center gap-40 mt-16 pb-60'>
+                <Power
+                    title='Super hearing'
+                    img={'Power1.svg'}
+                    description='Tu poder es el de poder escuchar como se pronuncian las palabras que aparecen en las preguntas.'
+                    setClassPowerD={setClassPower1D}
+                    setCounter={setCounter}
+                    classPowerD={classPower1D}
+                    index={0}
+                />
+                <Power
+                    title='Memory pro'
+                    img={'Power2.svg'}
+                    description='Tu poder es el de poder ver la traducción de la palabra clave en la pregunta.'
+                    setClassPowerD={setClassPower2D}
+                    setCounter={setCounter}
+                    classPowerD={classPower2D}
+                    index={1}
+                />
+                <Power
+                    title='Super radar'
+                    img={'Power3.svg'}
+                    description='Tu poder es el de poder reconocer ubicar y escuchar las palabras que aparecen en las preguntas.'
+                    setClassPowerD={setClassPower3D}
+                    setCounter={setCounter}
+                    classPowerD={classPower3D}
+                    index={2}
+                />
             </div>
         </div>
     )

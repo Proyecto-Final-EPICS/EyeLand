@@ -4,7 +4,7 @@ import Title from '../common/Title'
 
 function OurTeam() {
     return (
-        <div className='ourteam'>
+        <div className='mb-40'>
             <Title title={'Nuestro equipo'} textColor={'text-black'} />
             <Section
                 title={'Profesores'}

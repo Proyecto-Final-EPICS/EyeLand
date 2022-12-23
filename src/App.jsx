@@ -13,9 +13,9 @@ function App() {
   const { alertText, alertSeverity, alertOpen } = useContext(AlertContext)
 
   return (
-    <div className="App">
+    <div className="min-h-screen font-Poppins overflow-x-hidden flex flex-col justify-between">
       {
-        <Collapse in={alertOpen} className='alert'>
+        <Collapse in={alertOpen} className='fixed left-1/2 -translate-x-1/2 mt-5 shadow-lg'>
           <Alert severity={alertSeverity}>{alertText}</Alert>
         </Collapse>
       }

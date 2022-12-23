@@ -1,5 +1,5 @@
 import React from 'react'
-import NavBarCrud from './NavBarCrud'
+import NavBarCrud from '../../components/Admin/NavBarCrud'
 import { useLocation } from 'react-router-dom'
 
 import CRUDTable,
@@ -87,12 +87,12 @@ function AdminCRUD() {
     const name = location.pathname.split('/')[3]
 
     return (
-        <div className='crud'>
+        <div className='flex w-full'>
             <NavBarCrud />
-            <div className='crudSection'>
-                <div>
+            <div className='w-full'>
+                <div className='bg-terciary w-full flex gap-3 px-5 py-3'>
                     <img src="Table.svg" alt="" />
-                    <h3>{name}</h3>
+                    <h3 className='text-xl text-white font-bold'>{name}</h3>
                 </div>
                 <div style={styles.container}>
                     <CRUDTable

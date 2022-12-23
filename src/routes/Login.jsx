@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { AlertContext } from '../contexts/AlertContext'
 import { useNavigate } from 'react-router-dom'
-import NavBar from '../components/Login/NavBar'
+import NavBar from '../components/Home/NavBar'
 import Footer from '../components/common/Footer'
 import axios from 'axios'
 import ReactLoading from 'react-loading';
@@ -66,14 +66,14 @@ function Login() {
 
     return (
         <>
-            <NavBar />
-            <div className='login'>
-                <div>
-                    <img src="Logo.svg" />
-                    <div className='card'>
-                        <h2>Iniciar sesión</h2>
-                        <form onSubmit={handleSubmit}>
-                            <div >
+            <NavBar showTeacherButton={false} />
+            <div className='h-auto flex items-center justify-center flex-col w-auto'>
+                <div className='relative w-fit'>
+                    <img src="Logo.svg" className='absolute w-96 -top-48 -right-48' />
+                    <div className='card flex flex-col items-stretch justify-center w-96 relative'>
+                        <h2 className='text-center'>Iniciar sesión</h2>
+                        <form onSubmit={handleSubmit} className='my-5 w-full'>
+                            <div className='w-full'>
                                 <label htmlFor='username'>Usuario</label>
                                 <input type='username' name='username' id='username' value={form.username} onChange={handleChange} />
                             </div>
@@ -81,7 +81,7 @@ function Login() {
                                 <label htmlFor='password'>Contraseña</label>
                                 <input type='password' name='password' id='password' value={form.password} onChange={handleChange} />
                             </div>
-                            <button className='button bg-primary text-white' type='submit'>
+                            <button className='button bg-primary text-white w-full mt-5' type='submit'>
                                 {loading ? <ReactLoading type='spin' color='white' height={20} width={20} /> : 'Iniciar sesión'}
                             </button>
                         </form>

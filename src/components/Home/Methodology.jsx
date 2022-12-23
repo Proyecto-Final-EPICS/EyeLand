@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Title from '../common/Title'
+import Task from './Task'
 
 function Methodology() {
 
@@ -51,70 +52,63 @@ function Methodology() {
     }, [count])
 
     return (
-        <div className='methodology'>
-            <Title textColor='text-black' title=' Nuestra metodología' />
-            <p>
+        <div className='flex flex-col items-center justify-center w-screen h-auto'>
+            <Title textColor='text-black' title='Nuestra metodología' />
+            <p className='text-2xl text-center font-light w-[1000px] leading-relaxed'>
                 Dividimos nuestra aplicación en lo que llamamos  TASK. Cada una de estas a su vez poseé tres partes que corresponden a PresTask, Activity y PosTask
             </p>
-            <div className='banner'>
-                <div className='tasks'>
+            <div className='flex w-screen justify-start max-w-[1366px]'>
+                {/* Bola verder */}
+                <div className='tasks relative w-[600px] h-[600px] bg-primary rounded-full mt-52 flex items-center justify-center -left-28'>
+                    {/* Arco verde */}
                     <div className='absolute w-[2000px] h-[2000px] bg-terciary rounded-full -z-10 -left-[1600px] -top-[700px]'></div>
                     <div className='absolute w-[1900px] h-[1900px] bg-white rounded-full -z-10 -left-[1550px] -top-[650px]'></div>
-                    <h1>TASK</h1>
-                    <div
-                        className={classPretask}
-                    >
-                        <img src="PreTaskPhone.svg" />
-                        <h5 className={classPretaskP}>Pretask</h5>
-                        <p className={classPretaskD}>
-                            Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK.
-                        </p>
-                        <div
-                            onMouseEnter={() => {
-                                setClassPretask(classPretask + ' translate-x-[1000px]')
-                                setClassPretaskP('top-8 -translate-x-24')
-                                setClassPretaskD('top-16 -translate-x-36 opcity-100')
-                                setCount(0)
-                            }}>
-                        </div>
-                    </div>
-                    <div
-                        className={classActivity}
-                    >
-                        <img src="ActivityPhone.svg" />
-                        <h5 className={classActivityP}>Activity</h5>
-                        <p className={classActivityD}>
-                            Un conjunto de preguntas con feedback que te ayudaran a entender los conceptos aprendidos en la Pretask.
-                        </p>
-                        <div
-                            onMouseEnter={() => {
-                                setClassActivity(classActivity + ' translate-x-[650px]')
-                                setClassActivityP('top-4 -translate-x-24')
-                                setClassActivityD('top-12 -translate-x-36 opcity-100')
-                                setCount(1)
-                            }}
-                        >
-                        </div>
 
-                    </div>
-                    <div
-                        className={classPosTask}
-                    >
-                        <img src="PosTaskPhone.svg" />
-                        <h5 className={classPosTaskP}>PosTask</h5>
-                        <p className={classPosTaskD}>
-                            Un conjunto de preguntas sin feedfack que nos ayudaran a saber que tan bien aprendiste los conceptos.
-                        </p>
-                        <div
-                            onMouseEnter={() => {
-                                setClassPosTask(classPosTask + ' translate-x-[1000px]')
-                                setClassPosTaskP('top-8 -translate-x-24')
-                                setClassPosTaskD(' top-16 -translate-x-36 opcity-100')
-                                setCount(2)
-                            }}
-                        >
-                        </div>
-                    </div>
+                    <h1 className='text-8xl font-bold text-white'>TASK</h1>
+                    <Task
+                        title='Pretask'
+                        description='Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK.'
+                        img={'PreTaskPhone.svg'}
+                        classTask={classPretask}
+                        classTaskP={classPretaskP}
+                        classTaskD={classPretaskD}
+                        setClassTask={setClassPretask}
+                        setClassTaskP={setClassPretaskP}
+                        setClassTaskD={setClassPretaskD}
+                        count={count}
+                        setCount={setCount}
+                        index={0}
+                    />
+
+                    <Task
+                        title='Activity'
+                        description='Un conjunto de preguntas con feedback que te ayudaran a entender los conceptos aprendidos en la Pretask.'
+                        img={'ActivityPhone.svg'}
+                        classTask={classActivity}
+                        classTaskP={classActivityP}
+                        classTaskD={classActivityD}
+                        setClassTask={setClassActivity}
+                        setClassTaskP={setClassActivityP}
+                        setClassTaskD={setClassActivityD}
+                        count={count}
+                        setCount={setCount}
+                        index={1}
+                    />
+
+                    <Task
+                        title='PosTask'
+                        description='Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK.'
+                        img={'PosTaskPhone.svg'}
+                        classTask={classPosTask}
+                        classTaskP={classPosTaskP}
+                        classTaskD={classPosTaskD}
+                        setClassTask={setClassPosTask}
+                        setClassTaskP={setClassPosTaskP}
+                        setClassTaskD={setClassPosTaskD}
+                        count={count}
+                        setCount={setCount}
+                        index={2}
+                    />
                 </div>
             </div>
         </div>

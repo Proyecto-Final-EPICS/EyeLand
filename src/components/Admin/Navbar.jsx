@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import AdminNavbarButton from './AdminNavbarButton'
 
 function Navbar() {
 
@@ -32,29 +33,33 @@ function Navbar() {
     }, [location])
 
     return (
-        <div className='navbar'>
-            <div>
-                <img src="Logo.svg" />
-                <div className='navButtons'>
-                    <div className={classActive}>
+        <div className='flex flex-col bg-terciary h-screen justify-between py-5 px-3 items-stretch z-10 shadow-lateralNavbar'>
+            <div className='flex flex-col gap-3'>
+                <img src="Logo.svg" className='w-10 mx-auto' />
+                <div className='flex flex-row relative mt-5'>
+                    <div className={'bg-white w-1 h-12 absolute -left-3 rounded-r-lg transition-all duration-300 ease-in-out ' + classActive}>
                     </div>
-                    <div>
+                    <div className='flex flex-col gap-3'>
                         <Link to={'home'}>
-                            <button className=" bg-primary">
-                                <img src="Home.svg" />
-                            </button>
+                            <AdminNavbarButton
+                                background={'bg-primary'}
+                                img={'Home.svg'}
+                            />
                         </Link>
-                        <Link to={'crud/Instituciones'}>
-                            <button className=" bg-primary">
-                                <img src="CRUD.svg" />
-                            </button>
+                        <Link to={'crud/instituciones'}>
+                            <AdminNavbarButton
+                                background={'bg-primary'}
+                                img={'CRUD.svg'}
+                            />
                         </Link>
                     </div>
                 </div>
             </div>
-            <button className='bg-red-600' onClick={handleLogout}>
-                <img src="Logout.svg" />
-            </button>
+            <AdminNavbarButton
+                background={'bg-red-600'}
+                onClick={handleLogout}
+                img={'Logout.svg'}
+            />
         </div>
     )
 }
