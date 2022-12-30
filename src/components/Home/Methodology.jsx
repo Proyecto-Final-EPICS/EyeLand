@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Title from '../common/Title'
 import Task from './Task'
+import Description from './Description'
 
 function Methodology() {
 
@@ -52,19 +53,19 @@ function Methodology() {
     }, [count])
 
     return (
-        <div className='flex flex-col items-center justify-center w-screen h-auto'>
+        <div className='flex flex-col items-center justify-center w-screen h-auto px-5'>
             <Title textColor='text-black' title='Nuestra metodología' />
-            <p className='text-2xl text-center font-light w-[1000px] leading-relaxed'>
+            <Description>
                 Dividimos nuestra aplicación en lo que llamamos  TASK. Cada una de estas a su vez poseé tres partes que corresponden a PresTask, Activity y PosTask
-            </p>
-            <div className='flex w-screen justify-start max-w-[1366px]'>
-                {/* Bola verder */}
-                <div className='tasks relative w-[600px] h-[600px] bg-primary rounded-full mt-52 flex items-center justify-center -left-28'>
-                    {/* Arco verde */}
-                    <div className='absolute w-[2000px] h-[2000px] bg-terciary rounded-full -z-10 -left-[1600px] -top-[700px]'></div>
-                    <div className='absolute w-[1900px] h-[1900px] bg-white rounded-full -z-10 -left-[1550px] -top-[650px]'></div>
+            </Description>
+            {/* <div className='flex w-screen justify-start max-w-[1366px]'>
 
-                    <h1 className='text-8xl font-bold text-white'>TASK</h1>
+                <div className='tasks relative w-[600px] h-[600px] bg-primary rounded-full mt-52 flex items-center justify-center -left-28'>
+
+                    <div className='absolute w-[2000px] h-[2000px] bg-terciary rounded-full -z-10 -left-[1800px]  xl:-left-[1600px] -top-[700px]' />
+                    <div className='absolute w-[1900px] h-[1900px] bg-white rounded-full -z-10 -left-[1750px] xl:-left-[1550px] -top-[650px]' />
+
+                    <h1 className='xl:text-8xl xl:font-bold xl:text-white hidden'>TASK</h1>
                     <Task
                         title='Pretask'
                         description='Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK.'
@@ -110,7 +111,7 @@ function Methodology() {
                         index={2}
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -14,7 +14,7 @@ function Home() {
             <Hero />
             <Methodology />
             <TeamWork />
-            <Accesibility />
+            {/* <Accesibility /> */}
             <OurTeam />
             <Footer />
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Power from './Power'
 import Title from '../common/Title'
+import Description from './Description'
 
 function TeamWork() {
 
@@ -30,12 +31,12 @@ function TeamWork() {
     }, [counter])
 
     return (
-        <div className='flex flex-col items-center justify-center w-screen h-auto mt-52 bg-secondary'>
+        <div className='flex flex-col items-center justify-center w-screen h-auto bg-secondary px-5 pb-10 mt-20'>
             <Title textColor='text-black' title='Trabajo en equipo' />
-            <p className='text-2xl text-center font-light w-[1000px] leading-relaxed'>
+            <Description >
                 Cada sesión se realiza en grupos de 1 - 3 personas en las que cada persona se le asignará un rol con una habilidad útil para la realización de la TASK.
-            </p>
-            <div className='flex justify-center gap-40 mt-16 pb-60'>
+            </Description>
+            {/* <div className='flex justify-center gap-40 mt-16 pb-60'>
                 <Power
                     title='Super hearing'
                     img={'Power1.svg'}
@@ -63,7 +64,7 @@ function TeamWork() {
                     classPowerD={classPower3D}
                     index={2}
                 />
-            </div>
+            </div> */}
         </div>
     )
 }
