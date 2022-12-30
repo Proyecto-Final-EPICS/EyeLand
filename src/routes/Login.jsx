@@ -75,11 +75,11 @@ function Login() {
                         <form onSubmit={handleSubmit} className='my-5 w-full'>
                             <div className='w-full'>
                                 <label htmlFor='username'>Usuario</label>
-                                <input type='username' name='username' id='username' value={form.username} onChange={handleChange} />
+                                <input type='username' name='username' id='login-teacher-form-username' value={form.username} onChange={handleChange} />
                             </div>
                             <div className='mt-5'>
                                 <label htmlFor='password'>Contraseña</label>
-                                <input type='password' name='password' id='password' value={form.password} onChange={handleChange} />
+                                <input type='password' name='password' id='login-teacher-form-password' value={form.password} onChange={handleChange} />
                             </div>
                             <button className='button bg-primary text-white w-full mt-5' type='submit'>
                                 {loading ? <ReactLoading type='spin' color='white' height={20} width={20} /> : 'Iniciar sesión'}
