@@ -3,7 +3,7 @@ import React from 'react'
 function AccesibilityButton({ className, onClick }) {
     return (
         <div
-            className={'absolute w-32 h-32 cursor-pointer ' + className}
+            className={'absolute w-[26%] h-[22%] cursor-pointer  ' + className}
             onClick={onClick}
         ></div>
     )

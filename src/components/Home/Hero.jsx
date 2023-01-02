@@ -2,7 +2,7 @@ import React from 'react'
 
 function Hero() {
     return (
-        <div className='flex flex-col-reverse items-center justify-center w-screen h-auto gap-3 px-20 xl:flex-row xl:gap-20'>
+        <div className='flex flex-col-reverse items-center justify-center w-screen h-auto gap-3 px-20 md:flex-row xl:gap-20'>
             <div className='flex flex-col items-start xl:w-[550px]'>
                 <h1 className='text-7xl xl:text-9xl font-bold bg-gradient-to-r from-primary to to-secondary bg-clip-text text-transparent animate-entrance-1'>
                     EYELAND
