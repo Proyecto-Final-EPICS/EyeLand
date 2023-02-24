@@ -54,6 +54,11 @@ function OurTeam() {
             img: "https://avatars.githubusercontent.com/u/74639893?v=4",
             link: "https://github.com/LeoLizc",
           },
+          {
+            name: "Leonardo D. Vergara Marquez",
+            img: "https://avatars.githubusercontent.com/u/73978713?v=4",
+            link: "https://github.com/leovergaramarq"
+          }
         ]}
       />
     </div>
