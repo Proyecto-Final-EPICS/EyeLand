@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
-    return (
-        <div className='flex flex-col items-center justify-center w-screen h-auto mb-5'>
-            <hr className='w-4/5 border-black my-5' />
-            <img src="MiniLogo.svg" alt="" />
-        </div>
-    )
+  return (
+    <div className="mb-5 flex h-auto w-screen flex-col items-center justify-center">
+      <hr className="my-5 w-4/5 border-black" />
+      <img src="MiniLogo.svg" alt="" />
+    </div>
+  );
 }
 
-export default Footer
+export default Footer;

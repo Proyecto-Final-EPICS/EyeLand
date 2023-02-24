@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
 function AccesibilityButton({ className, onClick }) {
-    return (
-        <div
-            className={'absolute w-[26%] h-[22%] cursor-pointer  ' + className}
-            onClick={onClick}
-        ></div>
-    )
+  return (
+    <div
+      className={"absolute h-[22%] w-[26%] cursor-pointer  " + className}
+      onClick={onClick}
+    ></div>
+  );
 }
 
-export default AccesibilityButton
+export default AccesibilityButton;
