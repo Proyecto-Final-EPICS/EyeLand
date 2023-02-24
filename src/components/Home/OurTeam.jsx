@@ -30,9 +30,9 @@ function OurTeam() {
         title={"Diseñadores"}
         people={[
           {
-            name: "Shannon A. Ebratt Ariza",
-            img: "https://mir-s3-cdn-cf.behance.net/user/115/f9ed0a661387125.62f534e44cf62.jpg",
-            link: "https://www.behance.net/shannonebratt",
+            name: "Wendy Florian Pacheco",
+            img: "https://media.licdn.com/dms/image/D4E03AQFpzXhp8Bm81Q/profile-displayphoto-shrink_100_100/0/1666830749986?e=1682553600&v=beta&t=wmSKZ0eJecmwUmhV65LUz5WyH7x81vXMSV6EZSQur8g",
+            link: "https://www.linkedin.com/in/diwendyflorian/",
           },
         ]}
       />
