@@ -3,8 +3,8 @@ import { AlertContext } from "../contexts/AlertContext";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/Home/NavBar";
 import Footer from "../components/common/Footer";
-import axios from "axios";
 import ReactLoading from "react-loading";
+import useLogin from "../hooks/useLogin";
 
 const INITIAL_STATE = {
   username: "",
@@ -18,9 +18,9 @@ const VALIDATION = {
 
 function Login() {
   const [form, setForm] = useState(INITIAL_STATE);
-  const [loading, setLoading] = useState(false);
   const { handleAlert } = useContext(AlertContext);
   const navigate = useNavigate();
+  const { loading, error, data, login } = useLogin();
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -30,29 +30,7 @@ function Login() {
     });
   };
 
-  const sendForm = (role) => {
-    setLoading(true);
-    const url =
-      role === "admin" ? "" : "https://epics-si-api.onrender.com/api/login";
-    axios.defaults.timeout = 10000;
-    axios
-      .post(url, form)
-      .then((res) => {
-        handleAlert("Bienvenido", "success");
-        role === "admin" ? navigate("/admin/home") : navigate("/teacher/home");
-      })
-      .catch((err) => {
-        const error = err.response
-          ? err.response.data
-          : "Error de conexión, intentelo más tarde";
-        handleAlert(error, "error");
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { username, password } = form;
     const usernameError = VALIDATION.username(username);
@@ -65,9 +43,17 @@ function Login() {
       handleAlert(passwordError, "error");
       return;
     }
-    navigate("/admin/home");
-    // sendForm(username === 'admin' ? 'admin' : 'teacher')
+    await login({ username, password });
   };
+
+  if (data && !error) {
+    navigate("/teacher/home");
+  }
+
+  if (error) {
+    handleAlert(error, "error");
+  }
+
 
   return (
     <>
