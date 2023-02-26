@@ -7,21 +7,21 @@ function Methodology() {
   const [count, setCount] = useState(0);
 
   const [classPretask, setClassPretask] = useState("md:-top-32");
-  const [classPretaskP, setClassPretaskP] = useState("md:top-10 md:-right-24");
+  const [classPretaskP, setClassPretaskP] = useState("md:top-10 md:-right-28");
   const [classPretaskD, setClassPretaskD] = useState(
     "md:top-20 md:-translate-x-44 md:opacity-0"
   );
 
   const [classActivity, setClassActivity] = useState("md:-right-24");
   const [classActivityP, setClassActivityP] = useState(
-    "md:top-24 md:-right-24"
+    "md:top-24 md:-right-36"
   );
   const [classActivityD, setClassActivityD] = useState(
     "md:top-20 md:-translate-x-44 md:opacity-0"
   );
 
   const [classPosTask, setClassPosTask] = useState("md:-bottom-32");
-  const [classPosTaskP, setClassPosTaskP] = useState("md:top-44 md:-right-24");
+  const [classPosTaskP, setClassPosTaskP] = useState("md:top-44 md:-right-28");
   const [classPosTaskD, setClassPosTaskD] = useState(
     "md:top-20 md:-translate-x-44 md:opacity-0"
   );
@@ -30,27 +30,27 @@ function Methodology() {
     switch (count) {
       case 0:
         setClassActivity("md:-right-24");
-        setClassActivityP("md:top-24 md:-right-24");
+        setClassActivityP("md:top-24 md:-right-36");
         setClassActivityD("md:top-20 md:-translate-x-44 md:opacity-0");
         setClassPosTask("md:-bottom-32");
-        setClassPosTaskP("md:top-44 md:-right-24");
+        setClassPosTaskP("md:top-44 md:-right-28");
         setClassPosTaskD("md:top-20 md:-translate-x-44 md:opacity-0");
 
         break;
       case 1:
         setClassPretask("md:-top-32");
-        setClassPretaskP("md:top-10 md:-right-24");
+        setClassPretaskP("md:top-10 md:-right-28");
         setClassPretaskD("md:top-20 md:-translate-x-44 md:opacity-0");
         setClassPosTask("md:-bottom-32");
-        setClassPosTaskP("md:top-44 md:-right-24");
+        setClassPosTaskP("md:top-44 md:-right-28");
         setClassPosTaskD("md:top-20 md:-translate-x-44 md:opacity-0");
         break;
       case 2:
         setClassPretask("md:-top-32");
-        setClassPretaskP("md:top-10 md:-right-24");
+        setClassPretaskP("md:top-10 md:-right-28");
         setClassPretaskD("md:top-20 md:-translate-x-44 md:opacity-0");
         setClassActivity("md:-right-24");
-        setClassActivityP("md:top-24 md:-right-24");
+        setClassActivityP("md:top-24 md:-right-36");
         setClassActivityD("md:top-20 md:-translate-x-44 md:opacity-0");
         break;
       default:
@@ -76,8 +76,8 @@ function Methodology() {
             TASK
           </h1>
           <Task
-            title="Pretask"
-            description="Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK."
+            title="Pre-Task"
+            description="Una preguntas con las cuales aprenderas los conceptos necesarios para realizar la TASK."
             img={"PreTaskPhone.svg"}
             classTask={classPretask}
             classTaskP={classPretaskP}
@@ -91,8 +91,8 @@ function Methodology() {
           />
 
           <Task
-            title="Activity"
-            description="Un conjunto de preguntas con feedback que te ayudaran a entender los conceptos aprendidos en la Pretask."
+            title="During-Task"
+            description="Una actividad en grupo donde deberas aplicar los conceptos aprendidos en la PreTask."
             img={"ActivityPhone.svg"}
             classTask={classActivity}
             classTaskP={classActivityP}
@@ -106,8 +106,8 @@ function Methodology() {
           />
 
           <Task
-            title="PosTask"
-            description="Una serie de link y videos se te daran para que aprendas los conceptos a usar durante la TASK."
+            title="Post-Task"
+            description="Una serie de preguntas con audio para que puedas evaluar tu aprendizaje."
             img={"PosTaskPhone.svg"}
             classTask={classPosTask}
             classTaskP={classPosTaskP}

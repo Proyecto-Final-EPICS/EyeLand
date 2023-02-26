@@ -1,6 +1,3 @@
-import React, { useRef } from "react";
-import useOnScreen from "../../hooks/useOnScreen";
-
 function Task({
     title,
     description,
@@ -41,7 +38,14 @@ function Task({
                             `${classTask} md:translate-x-[170px] xl:translate-x-[600px]`
                         );
                     }
-                    setClassTaskP("md:top-8 md:-translate-x-24");
+
+                    if (title === "During-Task") {
+                        setClassTaskP("md:top-8 md:-translate-x-36 w-36")
+                    } else if (title === "Post-Task") {
+                        setClassTaskP("md:top-8 md:-translate-x-32");
+                    } else {
+                        setClassTaskP("md:top-8 md:-translate-x-28");
+                    }
                     setClassTaskD("md:top-16 md:-translate-x-36 md:opcity-100");
                     setCount(index);
                 }}

@@ -11,7 +11,7 @@ function OurTeam() {
         people={[
           {
             name: "Dr. Miguel Jimeno Paba",
-            img: "https://media.licdn.com/dms/image/C5603AQGEG3qFyxN2Uw/profile-displayphoto-shrink_100_100/0/1658951618029?e=1676505600&v=beta&t=FhZm-m1fT01Mx7hFwMHTClgcoS0CJmu1UzMjHShLeH8",
+            img: "https://media.licdn.com/dms/image/C5603AQGEG3qFyxN2Uw/profile-displayphoto-shrink_100_100/0/1658951618029?e=1682553600&v=beta&t=5VH8dKbyqW6PaSbflk_k5GjEQLhIA5U9MQJ5i-PYJNs",
             link: "https://github.com/majimeno",
           },
           {
@@ -21,7 +21,7 @@ function OurTeam() {
           },
           {
             name: "PhD. Heidy Robles",
-            img: "https://media.licdn.com/dms/image/C4D03AQFOJXCqIgEsXQ/profile-displayphoto-shrink_200_200/0/1647461565960?e=1676505600&v=beta&t=ro8SxEM7eXYL_-GG1jVl1sZXr-mqhto6UTnpGfbCq7k",
+            img: "https://media.licdn.com/dms/image/D4E03AQGFTuTJEvKcog/profile-displayphoto-shrink_100_100/0/1674572891630?e=1682553600&v=beta&t=yARSPOMHfydrilACP0TQS7sJM4eWzN3SG7K-EEvCMwc",
             link: "https://www.linkedin.com/in/heydy-selene-robles-noriega-58b73236/?locale=en_US",
           },
         ]}

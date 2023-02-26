@@ -3,17 +3,17 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { HashRouter as Router } from "react-router-dom";
 import { AlertProvider } from "./contexts/AlertContext";
-import { UserProvider } from "./contexts/UserContext";
+import { AuthStorageProvider } from "./contexts/AuthStorageContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <AlertProvider>
-        <UserProvider>
+      <AuthStorageProvider>
+        <AlertProvider>
           <App />
-        </UserProvider>
-      </AlertProvider>
+        </AlertProvider>
+      </AuthStorageProvider>
     </Router>
   </React.StrictMode>
 );

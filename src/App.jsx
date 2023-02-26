@@ -7,6 +7,9 @@ import Login from "./routes/Login";
 import Admin from "./routes/Admin";
 import AdminHome from "./routes/Admin/AdminHome";
 import AdminCRUD from "./routes/Admin/AdminCRUD";
+import Teacher from "./routes/Teacher";
+import TeacherHome from "./routes/Teacher/TeacherHome";
+import TeacherCourses from "./routes/Teacher/TeacherCourses";
 
 function App() {
   const { alertText, alertSeverity, alertOpen } = useContext(AlertContext);
@@ -28,6 +31,11 @@ function App() {
           <Route path="home" element={<AdminHome />} />
           <Route path="crud/*" element={<AdminCRUD />} />
         </Route>
+        <Route path="/teacher/*" element={<Teacher />}>
+          <Route path="home" element={<TeacherHome />} />
+          <Route path="courses/*" element={<TeacherCourses />} />
+        </Route>
+
       </Routes>
     </div>
   );
