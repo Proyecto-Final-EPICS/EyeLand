@@ -25,11 +25,24 @@ function TeacherCourses() {
     //MOCK DATA
     const data = {
         name: 'Curso de prueba',
-        session: true
+        session: false
     }
 
-    const started = true;
+    const finished = true;
+    const started = false;
     const totalQuestions = 10;
+
+    const finalScore = [
+        {
+            name: 'Grupo 1',
+        },
+        {
+            name: 'Grupo 2',
+        },
+        {
+            name: 'Grupo 3',
+        }
+    ]
 
     const groups = [
         {
@@ -121,6 +134,25 @@ function TeacherCourses() {
 
                                     }
                                 </div>
+                            }
+                            {
+                                finished && <div className='flex flex-col gap-10 mt-20 mx-5 w-full'>
+                                    {
+                                        finalScore.map((group, index) => {
+                                            return (
+                                                <div key={index} className='flex items-center gap-10 w-full'>
+                                                    <div className={'h-10 bg-blue-600 relative flex items-center '} style={{ width: `100%` }}>
+                                                        <div className='h-16 w-16 rounded-full bg-slate-200 absolute -right-8'>
+                                                            {/* <img src="" alt="" /> */}
+                                                        </div>
+                                                    </div>
+                                                    <p className='font-bold text-xl'>{group.name}</p>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+
                             }
                         </div>
                     </div> : <p>Not found</p>

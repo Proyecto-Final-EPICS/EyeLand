@@ -13,7 +13,7 @@ function Task({
 }) {
     return (
         <div
-            className={`relative flex transition-all duration-1000 ease-in-out md:absolute ${classTask}`}
+            className={`relative flex transition-all duration-1000 ease-in-out md:absolute cursor-pointer ${classTask}`}
         >
             <img src={img} className="w-28 md:w-32" />
             <h5
